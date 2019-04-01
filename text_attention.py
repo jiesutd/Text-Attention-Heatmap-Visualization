@@ -2,7 +2,7 @@
 # @Author: Jie Yang
 # @Date:   2019-03-29 16:10:23
 # @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-04-01 13:06:55
+# @Last Modified time: 2019-04-01 13:15:09
 
 
 ## convert the text/attention list to latex code, which will further generates the text heatmap based on attention weights.
@@ -44,5 +44,8 @@ North Korea and the US have ratcheted up tensions in recent weeks and the moveme
 On Wednesday, Mr Pence described the country as the "most dangerous and urgent threat to peace and security" in the Asia-Pacific.'''
 	words = sent.split()
 	attention = list(range(len(words)))
+	import random
+	random.seed(42)
+	random.shuffle(attention)
 	color = 'red'
 	generate(words, attention, "sample.tex", color)
