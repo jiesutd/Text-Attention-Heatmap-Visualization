@@ -6,9 +6,10 @@ Many attention based NLP tasks visualize the text with attention weights as back
 
 
 ##Usage
+
 It is very simple to use this code. Feed the word list and weight list in function `generate` with output Latex file directory and color configuration. The Latex file will be generated. Then compile the Latex file, the `.pdf` file will be generated.
 
-Notice the weight range: [0-100]
+* Notice the weight range: [0-100]
 
 
 ![alt text](red.png "Red demo")
