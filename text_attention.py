@@ -2,7 +2,7 @@
 # @Author: Jie Yang
 # @Date:   2019-03-29 16:10:23
 # @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-04-03 09:12:39
+# @Last Modified time: 2019-04-03 09:15:02
 
 
 ## convert the text/attention list to latex code, which will further generates the text heatmap based on attention weights.
@@ -49,6 +49,8 @@ def clean_word(word_list):
 
 
 if __name__ == '__main__':
+	## This is a demo:
+
 	sent = '''the USS Ronald Reagan - an aircraft carrier docked in Japan - during his tour of the region, vowing to "defeat any attack and meet any use of conventional or nuclear weapons with an overwhelming and effective American response".
 North Korea and the US have ratcheted up tensions in recent weeks and the movement of the strike group had raised the question of a pre-emptive strike by the US.
 On Wednesday, Mr Pence described the country as the "most dangerous and urgent threat to peace and security" in the Asia-Pacific.'''
