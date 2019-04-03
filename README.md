@@ -18,6 +18,20 @@ It is very simple to use this code. Feed the word list and weight list in functi
 ![alt text](blue.png "Blue demo")
 
 
+## Citation:   
+
+This repository will be part of new [NCRF++](https://github.com/jiesutd/NCRFpp). Please cite our please cite our [ACL demo paper](https://arxiv.org/abs/1806.05626) if you use this code.
+
+    @inproceedings{yang2018ncrf,  
+     title={NCRF++: An Open-source Neural Sequence Labeling Toolkit},  
+     author={Yang, Jie and Zhang, Yue},  
+     booktitle={Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics},
+     Url = {http://aclweb.org/anthology/P18-4013},
+     year={2018}  
+    }
+
+
+
 ## Update
 
 * 2019-Apr-01, init version
