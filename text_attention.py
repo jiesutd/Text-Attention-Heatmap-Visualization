@@ -2,7 +2,7 @@
 # @Author: Jie Yang
 # @Date:   2019-03-29 16:10:23
 # @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-04-03 22:18:18
+# @Last Modified time: 2019-04-03 22:20:49
 
 
 ## convert the text/attention list to latex code, which will further generates the text heatmap based on attention weights.
@@ -32,11 +32,11 @@ def generate(text_list, attention_list, latex_file, color='red', rescale_value =
 		f.write(r'''\end{document}''')
 
 def rescale(input_list):
-    the_array = np.asarray(input_list)
-    the_max = np.max(the_array)
-    the_min = np.min(the_array)
-    rescale = (the_array - the_min)/(the_max-the_min)*100
-    return rescale.tolist()
+	the_array = np.asarray(input_list)
+	the_max = np.max(the_array)
+	the_min = np.min(the_array)
+	rescale = (the_array - the_min)/(the_max-the_min)*100
+	return rescale.tolist()
 
 
 def clean_word(word_list):
