@@ -2,7 +2,7 @@
 # @Author: Jie Yang
 # @Date:   2019-03-29 16:10:23
 # @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-04-03 09:15:02
+# @Last Modified time: 2019-04-03 22:18:18
 
 
 ## convert the text/attention list to latex code, which will further generates the text heatmap based on attention weights.
@@ -10,9 +10,10 @@ import numpy as np
 
 latex_special_token = ["!@#$%^&*()"]
 
-def generate(text_list, attention_list, latex_file, color='red'):
+def generate(text_list, attention_list, latex_file, color='red', rescale_value = False):
 	assert(len(text_list) == len(attention_list))
-	attention_list = rescale(attention_list)
+	if rescale_value:
+		attention_list = rescale(attention_list)
 	word_num = len(text_list)
 	text_list = clean_word(text_list)
 	with open(latex_file,'w') as f:
