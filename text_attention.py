@@ -2,7 +2,7 @@
 # @Author: Jie Yang
 # @Date:   2019-03-29 16:10:23
 # @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-04-03 22:20:49
+# @Last Modified time: 2019-04-12 09:56:12
 
 
 ## convert the text/attention list to latex code, which will further generates the text heatmap based on attention weights.
@@ -21,15 +21,18 @@ def generate(text_list, attention_list, latex_file, color='red', rescale_value =
 \special{papersize=210mm,297mm}
 \usepackage{color}
 \usepackage{tcolorbox}
+\usepackage{CJK}
 \usepackage{adjustbox}
 \tcbset{width=0.9\textwidth,boxrule=0pt,colback=red,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
-\begin{document}'''+'\n')
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}'''+'\n')
 		string = r'''{\setlength{\fboxsep}{0pt}\colorbox{white!0}{\parbox{0.9\textwidth}{'''+"\n"
 		for idx in range(word_num):
 			string += "\\colorbox{%s!%s}{"%(color, attention_list[idx])+"\\strut " + text_list[idx]+"} "
 		string += "\n}}}"
 		f.write(string+'\n')
-		f.write(r'''\end{document}''')
+		f.write(r'''\end{CJK*}
+\end{document}''')
 
 def rescale(input_list):
 	the_array = np.asarray(input_list)
@@ -55,8 +58,11 @@ if __name__ == '__main__':
 	sent = '''the USS Ronald Reagan - an aircraft carrier docked in Japan - during his tour of the region, vowing to "defeat any attack and meet any use of conventional or nuclear weapons with an overwhelming and effective American response".
 North Korea and the US have ratcheted up tensions in recent weeks and the movement of the strike group had raised the question of a pre-emptive strike by the US.
 On Wednesday, Mr Pence described the country as the "most dangerous and urgent threat to peace and security" in the Asia-Pacific.'''
+	sent = '''我 回忆 起 我 曾经 在 大学 年代 ， 我们 经常 喜欢 玩 “ Hawaii guitar ” 。 说起 Guitar ， 我 想起 了 西游记 里 的 琵琶精 。
+	今年 下半年 ， 中 美 合拍 的 西游记 即将 正式 开机 ， 我 继续 扮演 美猴王 孙悟空 ， 我 会 用 美猴王 艺术 形象 努力 创造 一 个 正能量 的 形象 ， 文 体 两 开花 ， 弘扬 中华 文化 ， 希望 大家 能 多多 关注 。'''
 	words = sent.split()
-	attention = list(range(len(words)))
+	word_num = len(words)
+	attention = [(x+1.)/word_num*100 for x in range(word_num)]
 	import random
 	random.seed(42)
 	random.shuffle(attention)

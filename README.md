@@ -17,6 +17,8 @@ It is very simple to use this code. Feed the word list and weight list in functi
 
 ![alt text](blue.png "Blue demo")
 
+![alt text](CN.png "Chinese demo")
+
 
 ## Citation:   
 
@@ -33,6 +35,6 @@ This repository will be part of new [NCRF++](https://github.com/jiesutd/NCRFpp).
 
 
 ## Update
-
+* 2019-Apr-12, support Chinese
 * 2019-Apr-01, init version
 
